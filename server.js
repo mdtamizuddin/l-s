@@ -11,8 +11,6 @@ const port = process.env.PORT || 5000
 const uri = process.env.DATABASE_URI
 
 
-
-
 mongoose.connect(uri, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -25,6 +23,7 @@ app.use('/pricing', require('./Router/pricingRouter'))
 app.use('/titles', require('./Router/titlesRouter'))
 app.use('/portfolio', require('./Router/portfolioRouter'))
 app.use('/email', require('./Router/email'))
+app.use('/genarel', require('./Router/genarelPrice'))
 
 app.get('/', (req, res) => {
     res.send({})
